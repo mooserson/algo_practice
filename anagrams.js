@@ -20,6 +20,8 @@ function main() {
     console.log(count);
 }
 
+//attempt2 works
+
 function main() {
     var a = readLine();
     var b = readLine();
