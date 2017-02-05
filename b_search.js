@@ -1,10 +1,11 @@
+//[1,2,3,4,5,6,7,8] , 5
+
 function b_search(arr, target) {
   if (arr.length === 0) {
     return null;
   }
 
   var mid = Math.floor(arr.length / 2);
-
   if(arr[mid] === target) {
     return mid;
   } else if (arr[mid] > target) {
@@ -12,5 +13,5 @@ function b_search(arr, target) {
   } else {
     var partGoal = b_search(arr.slice(mid + 1, arr.length), target);
   }
-  return partGoal ? partGoal + 1 + mid : null;
+  return partGoal === null ? null : partGoal + 1 + mid;
 }
