@@ -8,8 +8,9 @@ function b_search(arr, target) {
   if(arr[mid] === target) {
     return mid;
   } else if (arr[mid] > target) {
-    b_search(arr.slice(0, mid), target);
+    return b_search(arr.slice(0, mid), target);
   } else {
-    b_search(arr.slice(mid + 1), target);
+    var partGoal = b_search(arr.slice(mid + 1, arr.length), target);
   }
+  return partGoal ? partGoal + 1 + mid : null;
 }
