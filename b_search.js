@@ -1,17 +1,18 @@
-//[1,2,3,4,5,6,7,8] , 5
-
-function b_search(arr, target) {
-  if (arr.length === 0) {
+function bSearch(arr, target) {
+  if (arr.length === 0){
     return null;
   }
 
   var mid = Math.floor(arr.length / 2);
-  if(arr[mid] === target) {
+  if (arr[mid] === target) {
     return mid;
   } else if (arr[mid] > target) {
-    return b_search(arr.slice(0, mid), target);
+    return bSearch(arr.slice(0, mid), target);
   } else {
-    var partGoal = b_search(arr.slice(mid + 1, arr.length), target);
+    var partialSolution = bSearch(arr.slice(mid + 1, arr.length), target);
   }
-  return partGoal === null ? null : partGoal + 1 + mid;
+
+    return partialSolution === null ? null : partialSolution + mid + 1;
 }
+
+bSearch([1,2,3], 3);
